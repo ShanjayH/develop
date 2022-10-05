@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class leads {
+public class leads2 {
 	public static void main(String args[]) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\shanj\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -36,64 +36,6 @@ public class leads {
 
 		// Click leads
 		driver.findElement(By.xpath("//*[@id=\"candidate\"]/ul/li[1]/a")).click();
-
-		// click add lead button
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/div/a")).click();
-
-		// entering the required field and saving the details
-
-		// enter firstname
-		driver.findElement(By.name("first_name")).sendKeys("Shanjay");
-
-		// enter lastname
-		driver.findElement(By.name("last_name")).sendKeys("H");
-
-		// enter Email
-		driver.findElement(By.name("email")).sendKeys("NEC0920007@nttf.co.in");
-
-		// Enter phone number
-		driver.findElement(By.xpath("//*[@id=\"add_lead\"]/div[1]/div[4]/label/input")).sendKeys("9638527412");
-
-		// dropdown for gender
-		WebElement test = driver.findElement(By.name("gender"));
-		Select dd = new Select(test);
-		// Using the object of select class, select option
-		dd.selectByIndex(2);
-
-		// date
-		WebElement dateBox = driver.findElement(By.xpath("//*[@id=\"add_lead\"]/div[1]/div[6]/label/input"));
-		// Fill date as dd/mm/yyyy as 25/09/2002
-		dateBox.sendKeys("25092002");
-
-		// Address
-		driver.findElement(By.name("address")).sendKeys("Plot No. 21, Sector 13, Gurgaon");
-
-		// aadhar number
-		driver.findElement(By.name("aadhar_number")).sendKeys("123456745813");
-
-		// Qualification
-		WebElement highqualification = driver.findElement(By.name("qualification"));
-		Select high = new Select(highqualification);
-		high.selectByIndex(6);
-
-		// Selecting State
-		WebElement State = driver.findElement(By.name("state"));
-		Select st = new Select(State);
-		st.selectByIndex(23);
-		Thread.sleep(2000);
-
-		// selecting District
-		WebElement dis = driver.findElement(By.name("district"));
-		Select dt = new Select(dis);
-		dt.selectByIndex(6);
-		Thread.sleep(2000);
-
-		// Entering Year of pass
-		driver.findElement(By.name("year_of_pass")).sendKeys("2019");
-
-		// click save button
-		WebElement sa = driver.findElement(By.xpath("//*[@id=\"submit_btn\"]"));
-		sa.click();
 
 		// after saving the process using edit option filling remaing data
 
@@ -208,7 +150,7 @@ public class leads {
 		// Eligibility Status
 		WebElement el = driver.findElement(By.xpath("//*[@id=\"add_lead\"]/div[1]/div[23]/label/select"));
 		Select Eligiblity = new Select(el);
-		Eligiblity.selectByIndex(3);
+		Eligiblity.selectByIndex(2);
 
 		// Examination Status
 		WebElement exa = driver.findElement(By.xpath("//*[@id=\"add_lead\"]/div[1]/div[24]/label/select"));
@@ -234,6 +176,17 @@ public class leads {
 		// click save button
 		driver.findElement(By.id("submit_btn")).click();
 		Thread.sleep(2000);
-
+		
+		//click edit again
+		//driver.findElement(By.xpath("//*[@id=\"edit_btn\"]")).click();
+		
+		//enter dob again
+		//driver.findElement(By.name("date_of_birth")).sendKeys("05122002");
+		
+		//enter reporting date again
+		//driver.findElement(By.name("reporting_date")).sendKeys("12102022");
+		
+		//driver.findElement(By.id("submit_btn")).click();
+		
 	}
 }
