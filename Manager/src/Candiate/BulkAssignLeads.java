@@ -16,13 +16,13 @@ public class BulkAssignLeads {
 		driver.manage().window().maximize();
 
 		driver.get("http://ec2-65-1-5-19.ap-south-1.compute.amazonaws.com:8000/");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.linkText("LOGIN")).click(); // using Selenium click button method
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button
@@ -31,26 +31,25 @@ public class BulkAssignLeads {
 		Thread.sleep(2000);
 
 		// Click Candidate button
-		WebElement can = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[3]/a"));
-		can.click();
-		
-		//Click bulk Assign Leads
-		driver.findElement(By.xpath("//*[@id=\"candidate\"]/ul/li[2]/a")).click();
-		
-		//click Unassigned leads
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[3]/a")).click();
+
+		// Click bulk Assign Leads
+		driver.findElement(By.linkText("Bulk Assign Leads")).click();
+
+		// click Unassigned leads
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form[2]/div/label/input")).click();
-		
-		//Select team
+
+		// Select team
 		WebElement st = driver.findElement(By.xpath("//*[@id=\"agent\"]"));
 		Select team = new Select(st);
-		team.selectByIndex(2);
-		
-		//Click checkbox
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/div/label/input")).click();
-		
-		//Click Assign Button
+		team.selectByIndex(1);
+
+		// Click checkbox
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[4]/td[1]/div/label/input")).click();
+		Thread.sleep(1500);
+
+		// Click Assign Button
 		driver.findElement(By.xpath("//*[@id=\"assignLeads\"]")).click();
-		
-		
+
 	}
 }

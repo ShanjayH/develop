@@ -15,13 +15,13 @@ public class Exam_Results {
 		driver.manage().window().maximize();
 
 		driver.get("http://ec2-65-1-5-19.ap-south-1.compute.amazonaws.com:8000/");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.linkText("LOGIN")).click(); // using Selenium click button method
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button
@@ -30,7 +30,9 @@ public class Exam_Results {
 		Thread.sleep(2000);
 
 		// click Exam
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a/span")).click();
+		Thread.sleep(1000);
 
 		// Click Exams Results
 		driver.findElement(By.xpath("//*[@id=\"exams\"]/ul/li[3]/a")).click();
@@ -74,13 +76,18 @@ public class Exam_Results {
 
 		// Click Update Button
 		driver.findElement(By.xpath("//*[@id=\"submit_btn\"]")).click();
-		Thread.sleep(1000);	
-		
-		//click Check Results
+		Thread.sleep(1000);
+
+		// click Exam
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a/span")).click();
+
+		// Click Exams Results
+		driver.findElement(By.xpath("/html/body/div/nav/ul/li[4]/div/ul/li[3]/a")).click();
+		// click Check Results
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[6]/a")).click();
 		Thread.sleep(1000);
-		
-		//Doenload results
+		// Download results
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[1]/div[2]/a")).click();
 	}
 }

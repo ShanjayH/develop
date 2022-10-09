@@ -15,13 +15,13 @@ public class Industry {
 		driver.manage().window().maximize();
 
 		driver.get("http://ec2-65-1-5-19.ap-south-1.compute.amazonaws.com:8000/");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.linkText("LOGIN")).click(); // using Selenium click button method
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button

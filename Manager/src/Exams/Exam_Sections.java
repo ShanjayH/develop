@@ -22,7 +22,7 @@ public class Exam_Sections {
 		Thread.sleep(3000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button
@@ -31,10 +31,11 @@ public class Exam_Sections {
 		Thread.sleep(2000);
 
 		// click Exam
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[4]/a/span")).click();
-
+       
 		// Click Exam Sections
-		driver.findElement(By.xpath("//*[@id=\"exams\"]/ul/li[3]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"exams\"]/ul/li[2]/a")).click();
 
 		// Click Add Section
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/div/a")).click();
@@ -44,7 +45,8 @@ public class Exam_Sections {
 				.sendKeys("Testing");
 
 		// Exam
-		WebElement Ex = driver.findElement(By.xpath("//*[@id=\"agent\"]"));
+		WebElement Ex = driver
+				.findElement(By.xpath("/html/body/div[1]/div/div/div/div/form/div[1]/div[2]/label/select"));
 		Select Exam = new Select(Ex);
 		Exam.selectByIndex(1);
 
@@ -71,10 +73,12 @@ public class Exam_Sections {
 
 		// Click Add
 		driver.findElement(By.xpath("//*[@id=\"submit_btn\"]")).click();
+		
+		//Click Go-Back
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/form/div[3]/button")).click();
 
 		// View
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[1]/td[4]/a[2]"))
-				.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[1]/td[4]/a[2]")).click();
 
 		// Navigate to Back
 		driver.navigate().back();

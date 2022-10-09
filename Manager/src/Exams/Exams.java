@@ -21,7 +21,7 @@ public class Exams {
 		Thread.sleep(3000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button
@@ -74,7 +74,7 @@ public class Exams {
 
 		// Click Update Button
 		driver.findElement(By.xpath("//*[@id=\"submit_btn\"]")).click();
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 
 	}
 }

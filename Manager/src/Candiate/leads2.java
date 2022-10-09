@@ -22,7 +22,7 @@ public class leads2 {
 		Thread.sleep(3000);
 
 		// Enter unsername and password
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@nttf.co.in");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 
 		// Click login button
@@ -178,15 +178,15 @@ public class leads2 {
 		Thread.sleep(2000);
 		
 		//click edit again
-		//driver.findElement(By.xpath("//*[@id=\"edit_btn\"]")).click();
+		driver.findElement(By.xpath("//*[@id=\"edit_btn\"]")).click();
 		
 		//enter dob again
-		//driver.findElement(By.name("date_of_birth")).sendKeys("05122002");
+		driver.findElement(By.name("date_of_birth")).sendKeys("05122002");
 		
 		//enter reporting date again
-		//driver.findElement(By.name("reporting_date")).sendKeys("12102022");
+		driver.findElement(By.name("reporting_date")).sendKeys("12102022");
 		
-		//driver.findElement(By.id("submit_btn")).click();
+		driver.findElement(By.id("submit_btn")).click();
 		
 	}
 }

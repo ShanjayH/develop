@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 public class team {
 	public static void main(String args[]) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
@@ -18,7 +19,7 @@ public class team {
 
 		driver.findElement(By.linkText("LOGIN")).click(); // using Selenium click button method
 		Thread.sleep(3000);
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
 		WebElement loginButtonId = driver.findElement(By.xpath("/html/body/section/form/div[3]/button"));
 		loginButtonId.click();
@@ -46,29 +47,32 @@ public class team {
 		// Click Industry report
 		WebElement ind = driver.findElement(By.xpath("//*[@id=\"report\"]/ul/li[2]/a"));
 		ind.click();
-        Thread.sleep(2000);
+		Thread.sleep(2000);
+
 		// click dashboard
 		WebElement dash1 = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[1]/a"));
 		dash1.click();
-		
-		//click reports dropdown button
+
+		// click reports dropdown button
 		WebElement rep2 = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[5]/a"));
 		rep2.click();
-		
-		//click state report
-    	driver.findElement(By.xpath("//*[@id=\"report\"]/ul/li[3]/a")).click();
-		
+		Thread.sleep(1000);
+
+		// click state report
+		driver.findElement(By.xpath("//*[@id=\"report\"]/ul/li[3]/a")).click();
 		Thread.sleep(2000);
-	    //click dashboard
-	    WebElement dash2 = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[1]/a"));
+
+		// click dashboard
+		WebElement dash2 = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[1]/a"));
 		dash2.click();
-		
-		//click report dropdown button 
+
+		// click report dropdown button
 		WebElement rep3 = driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[5]/a"));
 		rep3.click();
 		Thread.sleep(2000);
-		//click month report
-	    driver.findElement(By.xpath("//*[@id=\"report\"]/ul/li[4]/a")).click();
-		
+
+		// click month report
+		driver.findElement(By.xpath("//*[@id=\"report\"]/ul/li[4]/a")).click();
+
 	}
 }

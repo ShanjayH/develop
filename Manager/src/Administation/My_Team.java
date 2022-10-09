@@ -21,8 +21,9 @@ public class My_Team {
 
 		driver.findElement(By.linkText("LOGIN")).click(); // using Selenium click button method
 		Thread.sleep(3000);
-		driver.findElement(By.id("username")).sendKeys("alokkumar@nttf.co.in");
+		driver.findElement(By.id("username")).sendKeys("manager@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssw0rd@123");
+
 		WebElement loginButtonId = driver.findElement(By.xpath("/html/body/section/form/div[3]/button"));
 		loginButtonId.click();
 		Thread.sleep(2000);
@@ -79,17 +80,15 @@ public class My_Team {
 
 		driver.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys("Mohammed");
 
-		WebElement search = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form/div/input[2]"));
-		search.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form/div/input[2]")).click();
 
-		WebElement pr = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/a"));
-		pr.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/a")).click();
 
 		// Click Edit Button
-		WebElement edit = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[2]/button"));
-		edit.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[2]/button")).click();
 
-		// Editing fistname, lastname, email, phone number, address,emp id ,designation,role
+		// Editing fistname, lastname, email, phone number, address,emp id
+		// ,designation,role
 		driver.findElement(By.name("first_name")).clear();
 		driver.findElement(By.name("first_name")).sendKeys("Mohammed");
 		driver.findElement(By.name("last_name")).clear();
@@ -104,51 +103,46 @@ public class My_Team {
 		driver.findElement(By.name("employee_id")).sendKeys("EMP001");
 		driver.findElement(By.name("employee_designation")).clear();
 		driver.findElement(By.name("employee_designation")).sendKeys("Staff");
-		
+
 		// Role
 		WebElement role1 = driver.findElement(By.name("role"));
 		Select rol = new Select(role1);
 		rol.selectByIndex(2);
 		Thread.sleep(2000);
-		
+
 		// Click save button
-		WebElement Save1 = driver.findElement(By.id("submit_btn"));
-		Save1.click();
+		driver.findElement(By.id("submit_btn")).click();
 
 		Thread.sleep(2000);
 
 		// Search box
 		driver.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys("Mohammed");
 
-		WebElement search1 = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form/div/input[2]"));
-		search1.click();
-		
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form/div/input[2]")).click();
+
 		// Clicking Team Member name
-		WebElement Md = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/a"));
-		Md.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]/a")).click();
 
 		// click delete
-		WebElement del = driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]"));
-		del.click();
+		driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]")).click();
 
 		// More info
-		WebElement mi = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[7]/a"));
-		mi.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[7]/a")).click();
 
 		// click delete
-		WebElement del1 = driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]"));
-		del1.click();
+		driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]")).click();
 
 		// click goback
-		WebElement gob = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[8]/button"));
-		gob.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[8]/button")).click();
 
 		// click delete
-		WebElement del2 = driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]"));
-		del2.click();
+		driver.findElement(By.xpath("//*[@id=\"add_employee\"]/div[2]/a[2]")).click();
 
 		// click confirm delete
-		WebElement cd = driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[8]/a"));
-		cd.click();
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div[8]/a")).click();
+
+		// click dashboard
+		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[1]/a/span")).click();
+
 	}
 }
