@@ -32,9 +32,11 @@ public class BulkAssignLeads {
 
 		// Click Candidate button
 		driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[3]/a")).click();
+		Thread.sleep(1000);
 
 		// Click bulk Assign Leads
-		driver.findElement(By.linkText("Bulk Assign Leads")).click();
+		driver.findElement(By.xpath("//*[@id=\"candidate\"]/ul/li[2]/a")).click();
+		Thread.sleep(2000);
 
 		// click Unassigned leads
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[1]/form[2]/div/label/input")).click();
@@ -45,11 +47,11 @@ public class BulkAssignLeads {
 		team.selectByIndex(1);
 
 		// Click checkbox
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[4]/td[1]/div/label/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"select_all\"]")).click();
 		Thread.sleep(1500);
 
 		// Click Assign Button
 		driver.findElement(By.xpath("//*[@id=\"assignLeads\"]")).click();
-
+        
 	}
 }
